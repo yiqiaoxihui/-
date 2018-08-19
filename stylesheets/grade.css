@@ -1,0 +1,54 @@
+        body{
+            margin:0;
+            padding:0;
+            background: url("../assets/img/backgrounds/bk.jpg") no-repeat ;
+            background-size:100%;
+        }
+        #display{
+            width:500px;
+            height:100px;
+            margin:150px auto 0 auto;
+        }
+        #display ul{
+            list-style: none;
+        }
+        #display ul li{
+            float:left;
+        }
+        #display_title{
+            width: 600px;
+            height:32px;
+            line-height: 32px;
+            color: #EFED99;
+            font-size: 40px;
+			font-family:stkaiti;
+            text-align: center;
+			}
+/*		
+        #display_li{
+            border:2px solid blue;
+            width:200px;
+            height:30px;
+            line-height: 30px;
+            border-radius: 10px;
+            text-indent: 10px;
+            color:black;
+			font-size: 36px;
+			font-family:stkaiti;
+        }*/
+    #back{
+       text-align:center;
+    }
+    #submit{
+        height:50px;
+        width:390px;
+        margin-left: auto;
+        margin-right: auto;
+        background: rgba(115, 160, 227, 0.41);
+        border: 1px solid rgba(131, 154, 188, 0);
+        border-radius: 10px;
+        cursor:pointer;
+        color: white;
+        font-size: 25px;
+        font-family:stkaiti;
+    }

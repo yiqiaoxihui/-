@@ -1,0 +1,102 @@
+#div-login
+{
+    width: 600px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    border:1px solid grey;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 30px;
+    background-color: whitesmoke;
+}
+#div-login input
+{
+    display: block;
+    width: 200px;
+    height: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+#login-title
+{
+    font-size: 50px;
+    font-family:stkaiti;
+    font-style: bold;
+    margin-top: 60px;
+}
+#uname
+{
+    margin-top: 50px;
+}
+#psw
+{
+    margin-top: 30px;
+}
+#login-submit 
+{
+    margin-top: 20px;
+    width: 220px;
+    height:35px;
+    background-color: #0066ff;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+}
+#grade-result
+{
+    width: 800px;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border: 1px solid #aaaaaa;
+    border-radius: 10px;
+    text-align: center;
+}
+#grade-title
+{
+    padding: 4px;
+    font-size:40px;
+    font-family:stkaiti;
+    font-style: bold;
+    margin-bottom: 20px;
+}
+#grade-table
+{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#grade-table table
+{
+    width: 800px;
+
+}
+/*.c-whitesmoke
+{
+    background-color: whitesmoke;
+}*/
+#grade-table table th
+{
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+.content{
+    padding: 1px;
+    font-size:25px;
+    font-family:stkaiti;
+}
+#no-grade{
+    padding: 4px;
+    font-size:30px;
+    font-family:stkaiti;
+}

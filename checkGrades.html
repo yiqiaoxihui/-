@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查看成绩</title>
+    <link type="text/css" rel="stylesheet" href="./stylesheets/css_check_Grades.css">
+    <style type="text/css">
+#grade-analyze{
+  margin: auto;
+}
+#grade-analyze div{
+  float: left;
+  vertical-align: middle;
+  padding: 1px;
+  font-size:16px;
+  font-family:stkaiti;
+  width: 130px;
+}
+    </style>
+</head>
+<body>
+    <div id="div-login">
+        <div id="login-title">后台登陆</div>
+        <input id="uname" type="text" maxlength="15" value="dxroot">
+        <input id="psw" type="password" maxlength="15" value="dxadmin">
+        <button id="login-submit" onclick="login()">提交</button>
+    </div>
+    <div id="grade-result" style="display: none">
+        <div id="grade-title">成绩查看</div>
+        <select id="institute">
+          <option value="0">全部</option>
+        </select>
+        <select id="sort">
+          <option value="0">无排序</option>
+          <option value="1">成绩从高到低</option>
+          <option value="2">成绩从低到高</option>
+<!--           <option value="3">优秀</option>
+          <option value="4">不及格</option>
+          <option value="5">未完成</option> -->
+        </select>
+        <button onclick="ifsearch()">搜索</button>
+        <a href="addUser.html" target="_Blank">注册</a>
+		    <div id="no-grade"></div>
+        <div id="grade-analyze" >
+          <div id="summary"></div>
+          <div id="fail"></div>
+          <div id="excellent"></div>
+          <div id="undo"></div>
+          <div id="perexcellent"></div>
+          <div id="perpass"></div>
+        </div>
+        <div id="grade-table">
+            <table id="grade-table-body" cellpadding="1" cellspacing="20" class="content">
+<!--                <tr >
+                   <th>编号</th>
+                   <th>姓名</th>
+                   <th>学院</th>
+                   <th>成绩</th>
+               </tr> -->
+            </table>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="./javascripts/jquery.js" charset="UTF-8"></script>
+<script type="text/javascript" src="./javascripts/js_check_grade.js" charset="UTF-8"></script>
+</html>

@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--         <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" href="assets/css/supersized.css"> -->
+        <link rel="stylesheet" href="assets/css/style.css">
+        <style type="text/css">
+        .sub{
+            height: 50px;
+            width: 300px;
+            font-size: 30px;
+            }
+            #institute{
+                width: 290px;
+                height: 50px;
+                line-height: 20px;
+                margin-top: 25px;
+                padding: 11px 15px;
+                /* background: #2d2d2d; */
+                background: rgba(45,45,45,.15);
+                -moz-border-radius: 6px;
+                -webkit-border-radius: 6px;
+                border-radius: 6px;
+                border: 1px solid #3d3d3d;
+                border: 1px solid rgba(255,255,255,.15);
+                color: white;
+                font-size: 20px;
+            }
+            </style>
+    </head>
+    <body >
+            <div class="page-container">
+                <div id="input-container">
+                    <input type="text" id="username" class="username" placeholder="请输入姓名" maxlength="20" value="">                
+                    <input type="text" id="userid" class="userid" placeholder="请输入学号或工号" maxlength="15" value="">
+                    <select id="institute">
+                        <option value="1">船舶与海洋工程学院党委</option>
+                        <option value="2">海洋科学与技术学院党委</option>
+                        <option value="3">汽车工程学院党委</option>
+                        <option value="4">信息与电气工程学院党委</option>
+                        <option value="5">计算机科学与技术学院党委</option>
+                        <option value="6">材料科学与工程学院党委</option>
+                        <option value="7">理学土木党委</option>
+                        <option value="8">经济管理学院党委</option>
+                        <option value="9">语言文学学院党总支</option>
+                        <option value="10">后勤保卫处党总支</option>
+                        <option value="11">思想政治理论教学部党支部</option>
+                        <option value="12">体育教学部党支部</option>
+                        <option value="13">离退休党支部</option>
+                        <option value="14">继续教育学院党支部</option>
+                        <option value="15">校部机关党委</option>
+                    </select>
+                    <button  onClick="submitRegister()">提交</button>
+                    <button  onClick="window.close();">关闭</button>
+            </div>
+            </div>
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.8.2.min.js"></script>
+<!--         // <script src="assets/js/supersized.3.2.7.min.js"></script>
+        // <script src="assets/js/supersized-init.js"></script> -->
+        
+		<!-- // <script src="javascripts/login.js"></script> -->
+    </body>
+</html>
+<script type="text/javascript">
+function submitRegister()
+{
+    var ajaxUrl="addUserOk.php";
+    var username=document.getElementById("username").value;
+    var userid=document.getElementById("userid").value;
+    console.log("***************sinstitute_value***************");   
+    var sinstitute = document.getElementById("institute"); //定位id
+    var sinstitute_index= sinstitute.selectedIndex; // 选中索引
+    //var sinstitute_text = sinstitute.options[sinstitute_index].text; // 选中文本
+    var sinstitute_value = sinstitute.options[sinstitute_index].value; // 选中值
+    console.log(sinstitute_value);
+    console.log(username);
+    console.log(userid);
+    if(username==""||userid==""){
+        alert("请完善信息！");
+        return;
+    }
+    $.ajax({
+            type: 'POST',
+            url : ajaxUrl,
+            contentType : "application/x-www-form-urlencoded", //必须有
+            data : {"username":username,"userid":userid,"institute":sinstitute_value},
+            dataType:'JSON', 
+            success : function(data) {
+                var result = data;
+                var status=result['status'];
+                if(status==1){
+                    alert("添加成功！");
+                    window.close();
+                }
+                if(status==-1){
+                    alert("添加失败！");
+                }
+
+            },
+            error : function(err) {
+                alert("获取失败！get  "+err);
+            }
+        });
+    
+}
+
+</script>
